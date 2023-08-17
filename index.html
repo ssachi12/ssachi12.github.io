@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sachin's portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;500;700;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgb(0, 0, 29);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            z-index: 100;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        nav ul li {
+            list-style-type: none;
+            margin: 0px 23px;
+        }
+
+        /* Add this to highlight the active link */
+        nav ul li a.active {
+            color: rgb(170, 107, 228);
+        }
+
+        nav::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: rgb(170, 107, 228);
+            z-index: -1;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul li a:hover {
+
+            color: rgb(194, 194, 232);
+            font-size: 1.02rem;
+        }
+
+        .left {
+            font-size: 1.2rem;
+        }
+
+        /* home section */
+        .firstsection {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 115px -9px;
+        }
+
+        .firstsection>div {
+            width: 30%
+        }
+
+        .leftsection {
+            font-size: 2rem;
+
+        }
+
+        .leftsection .buttons {
+            padding: 15px 50px;
+        }
+
+        .leftsection .btn {
+            padding: 12px;
+            background: #0d0d43;
+            color: white;
+            border: 2px solid;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .rightsection img {
+            width: 80%;
+        }
+
+        .purple {
+            color: rgb(170, 107, 228);
+        }
+
+        #element {
+            color: rgb(170, 107, 228);
+        }
+
+        /* home section */
+        main {
+            overflow-x: hidden;
+        }
+
+        main hr {
+            border: 0px;
+            background: #444c70;
+            height: 1.2px;
+            margin: 136px 120px 10px 120px
+        }
+
+        /* about section */
+        #about {
+            margin: 30px;
+        }
+
+        #about h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 600;
+            color: rgb(170, 107, 228);
+        }
+
+        #about .myself {
+            width: 100%;
+            margin: 0px 52px 0px 10px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        #about>.myself>img {
+            margin: -47px 85px;
+            width: 223px;
+            height: 223px;
+        }
+
+        #about .Career {
+            margin: 50px 102px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .Career>img {
+            width: 441px;
+            height: 227px;
+        }
+
+        #about .Career>div>.about-headers {
+
+            text-align: left;
+            font-size: 30px;
+            color: #6a4a6a;
+        }
+
+        #about .Certification {
+            margin: 50px 102px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .Certification>img {
+            height: 262px;
+            width: 234px;
+            margin-top: -30px;
+        }
+
+        #about .Certification>div>.about-headers {
+
+            text-align: left;
+            font-size: 30px;
+            color: #6a4a6a;
+        }
+
+        #about .keystrength {
+            margin: 50px 102px;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .keystrength>img {
+            height: 346px;
+            width: 300px;
+            margin-top: -62px;
+
+        }
+
+        #about .keystrength>div>.about-headers {
+
+            text-align: left;
+            font-size: 30px;
+            color: #6a4a6a;
+        }
+
+        /* about section */
+        /* service section */
+        .services-section {
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-top: -50px;
+        }
+
+        .services-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 600;
+            color: rgb(170, 107, 228);
+        }
+
+        .services-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .project-content p {
+            margin-bottom: 20px;
+            margin-top: 20px;
+        }
+
+        /* service section */
+
+        /* project section */
+        .project-section {
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin: -50px;
+        }
+
+        .project-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 600;
+            color: rgb(170, 107, 228);
+        }
+
+        .project-content {
+            /* max-width: 800px;
+            margin: 0 auto;
+            text-align: left; */
+        }
+
+        .project-content p {
+            margin-bottom: 20px;
+        }
+
+        /* project section */
+        /* contact me section */
+
+        .contact-section {
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .contact-heading {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 40px;
+            font-weight: 600;
+            color: rgb(170, 107, 228);
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .contact-content p {
+            margin-bottom: 20px;
+        }
+
+        .contact-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: rgb(170, 107, 228);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* contact me section */
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="left">Sachin's portfolio</div>
+            <div class="right">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact me</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="firstsection" id="home">
+            <div class="leftsection">
+                Hii, My name is <span class="purple">Sachin</span>
+                <div>and I'm a passionate</div>
+                <span id="element"></span>
+                <div class="buttons">
+                    <button class="btn"><a href="resume.pdf" style="text-decoration: none; color: white;" download="sachin_resume.pdf">Download resume</a></button>
+                    <button class="btn"><a href="https://github.com/ssachi12" style="text-decoration: none; color: white;">Visit Github</a></button>
+                </div>
+            </div>
+            <div class="rightsection">
+
+                <img src="bg.png" alt="">
+            </div>
+        </section>
+        <hr>
+        <section id="about">
+            <!-- ... content for about section ... -->
+            <h2>Know About Me</h2>
+
+            <div class="myself">
+                <img src="about me.gif" alt="">
+                <p style="    margin-top: 10px; margin-right: 70px;">
+                    <span style="font-size: 30px;
+                font-weight: 600;">Hello!</span><br><span style="font-size: 30px;
+                font-weight: 600;"> I'm </span><span class="purple" style="font-size: 30px;
+                font-weight: 600;">Sachin Naik</span>,<br> an aspiring software
+                    developer with a passion for
+                    crafting elegant solutions
+                    through code. With a strong foundation in <span class="purple">core Java, SQL, Html-css, Javascript,
+                        ReactJs and Spring-boot Framework</span>, I am eager to
+                    contribute my skills to the world of software design and development.
+                </p>
+            </div>
+            <div class="Career">
+                <div style="margin: 55px 8px;">
+                    <p class="about-headers">Career Objective:</p>
+                    <p>I am driven by the desire to make a mark in the information technology industry.
+                        My goal is to secure an entry-level
+                        position where I can harness my abilities to innovate and adapt,
+                        fostering both personal and professional growth.</p>
+                </div>
+                <img src="careerObject3.gif" alt="">
+            </div>
+            <div class="Certification">
+                <img src="certification1.gif" alt="">
+                <div style="margin: 55px 8px;">
+                    <p class="about-headers">Certifications:</p>
+                    <p>Completed comprehensive training in Java, SQL, Hibernate, Spring Framework, and Web Technologies
+                        from
+                        Jspiders BTM Bangalore.</p>
+                </div>
+            </div>
+            <div class="keystrength">
+                <div style="margin: 55px 8px;">
+                    <p class="about-headers">Key Strengths:</p>
+                    <p>A collaborative team player with a demonstrated ability to excel independently. Enthusiastic
+                        about
+                        continuous learning and embracing emerging technologies. Strong communication skills, both
+                        written
+                        and verbal. Thrives under pressure, consistently delivering optimal results.</p>
+                </div>
+                <img src="strength.gif" alt="">
+            </div>
+        </section>
+        <hr>
+        <section class="services-section" id="services">
+            <div class="container">
+                <h2 class="services-heading">Services</h2>
+                <div style="display: flex;">
+                    <img src="services.gif" alt="" style="width: 400px;
+                height: 400px;
+                margin-left: 93px;
+                margin-top: -70px;">
+                    <div class="services-content">
+                        <p style="    margin: -10px -100px;">I offer a range of services tailored to meet your needs as
+                            a client seeking professional software solutions. While I may be new to the industry, my
+                            dedication, passion for learning, and technical skills ensure that I can provide valuable
+                            contributions to your projects.</p>
+
+                        <p style="margin-top: 30px;"><strong style=" text-align: left;
+                        font-size: 30px;
+                        color: #6a4a6a;">Web Development:</strong></p>
+                        <ul>
+                            <li>Responsive website development using modern HTML, CSS, and JavaScript.</li>
+                            <li>Creating dynamic user interfaces with React.js for enhanced user experiences.</li>
+                        </ul>
+
+                        <p style="margin-top: 30px;"><strong style=" text-align: left;
+                        font-size: 30px;
+                        color: #6a4a6a;">Full-Stack Development:</strong></p>
+                        <ul>
+                            <li>Building end-to-end web applications using React.js for the frontend and Spring Boot for
+                                the backend.</li>
+                            <li>Implementing RESTful APIs and handling data processing and storage.</li>
+                        </ul>
+
+                        <p style="margin-top: 30px;    margin-left: -510px;"><strong style=" text-align: left;
+                        font-size: 30px;
+                        color: #6a4a6a;">Technical Problem Solving:</strong></p>
+                        <ul style="    margin-left: -510px;">
+                            <li>Resolving coding issues, debugging, and optimizing code for performance.</li>
+                            <li>Providing creative solutions to technical challenges and delivering efficient solutions.
+                            </li>
+                        </ul>
+
+                        <p style="margin-top: 30px;margin-left: -510px;"><strong style=" text-align: left;
+                        font-size: 30px;
+                        color: #6a4a6a;">Collaborative Approach:</strong></p>
+                        <p style="    margin-left: -510px;">I'm committed to open communication and teamwork. I believe
+                            that collaboration is essential for producing high-quality results. I'm eager to learn,
+                            adapt, and work closely with you to achieve your project goals.</p>
+
+                        <p style="margin-top: 30px;margin-left: -510px;"><strong style=" text-align: left;
+                        font-size: 30px;
+                        color: #6a4a6a;">Custom Projects:</strong></p>
+                        <p style="    margin-left: -510px;">If you have a unique project in mind, feel free to reach
+                            out. I'm open to discussing custom projects and exploring how my skills can contribute to
+                            your specific requirements.</p>
+
+                        <p style="    margin-bottom: -140px; margin-left: -510px;">If you're ready to take your project
+                            to the next level, let's connect and discuss how I can assist you.</p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+        <hr>
+            <!-- ... content for projects section ... -->
+            <section class="project-section" id="projects">
+                <div class="container">
+                    <h2 class="project-heading">Projects</h2>
+                    <div class="project-content">
+
+                        <!-- Project: E-Commerce Website with React.js and Spring Boot -->
+                        <div class="project">
+                            <h3 style="    text-align: left;
+                            margin-left: 145px;
+                            color: #684973;">Project: E-Commerce Website with React.js and Spring Boot</h3>
+                            <div style="    display: flex;
+                            margin: 0px 100px;">
+                                <p><strong style="color: #2b2b71;">Overview:</strong> This project involved building a
+                                    full-stack e-commerce website
+                                    using React.js for the frontend and Spring Boot for the backend.</p>
+                                <img src="e-commerce.gif" alt="">
+                            </div>
+
+                            <div>
+                                <div style="    margin-right: 510px;
+                                margin-top: -180px;">
+                                    <p><strong style="color: #2b2b71;">Key Features:</strong></p>
+                                    <ul>
+                                        <li>User-friendly interface with product catalog and search capabilities.</li>
+                                        <li>Secure user authentication and cart management.</li>
+                                        <li>Integration with Spring Boot backend for efficient data handling.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex;
+                                justify-content: space-around;
+                                margin-top: 70px;">
+                                    <img src="tech1.gif" alt="" style="    margin-left: 300px;">
+                                    <div style="margin-right: 300px;
+                                   margin-top: 40px;">
+                                        <p><strong style="color: #2b2b71;">Technologies Used:</strong></p>
+                                        <p>Frontend: React.js, CSS, Material-UI.</p>
+                                        <p>Backend: Spring Boot, Java, Hibernate, MySQL.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <p><strong style="color: #2b2b71;margin-top: 100px;">Challenges and Solutions:</strong></p>
+                            <p><em>Challenge:</em> Seamlessly integrating frontend and backend components.</p>
+                            <p><em>Solution:</em> Utilized RESTful API endpoints for communication.</p>
+
+                            <!-- Include other sections specific to the e-commerce project -->
+
+                            <p><strong style="color: #2b2b71;">GitHub Repositories:</strong></p>
+                            <p>- <a href="https://github.com/yourusername/frontend-repo">Repository</a></p>
+                        </div>
+                        <div class="box" style="    width: 70%;
+                        height: 2px;
+                        background: white;
+                        margin-left: 220px;"></div>
+                        <!-- Project: Weather Application with React.js -->
+                        <div class="project">
+                            <h3 style="    text-align: left;
+                            margin-left: 145px;
+                            color: #684973;margin-top: 30px;">Project: Weather Application with React.js</h3>
+                            <div style=" display: flex;
+                            margin: 0px 100px;">
+                                <p><strong style="color: #2b2b71;">Overview:</strong> This self-made project involved
+                                    building a weather application
+                                    using React.js to provide real-time weather information to users.</p>
+                                <img src="wether1.gif" alt="" style="width: 300px;
+                                    margin-right: 100px;margin-top: -50px;">
+                            </div>
+                            <div style="margin-right: 380px;
+                                margin-top: -160px;">
+                                <div>
+                                    <p><strong style="color: #2b2b71;">Key Features:</strong></p>
+                                    <ul style="list-style-type: none;">
+                                        <li>User-friendly interface for location-based weather updates.</li>
+                                        <li>Real-time weather data retrieved from external API.</li>
+                                        <li>Responsive design for various devices.</li>
+                                    </ul>
+                                </div>
+                                <div style="display: flex;justify-content: space-around;">
+                                    <img src="tech2.gif" alt="" style="    width: 520px;
+                                     height: 394px;margin-top: -40px;
+                                     margin-left: 90px;">
+                                    <div style="    margin-top: 100px;">
+                                        <p><strong style="color: #2b2b71;">Technologies Used:</strong></p>
+                                        <p>Frontend: React.js, CSS, Axios (for API calls).</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="margin-top: -40px;"><strong style="color: #2b2b71;">Challenges and Solutions:</strong></p>
+                            <p><em>Challenge:</em> Fetching and displaying real-time weather data.</p>
+                            <p><em>Solution:</em> Utilized Axios library for API calls.</p>
+
+                            <!-- Include other sections specific to the weather application project -->
+
+                            <p><strong style="color: #2b2b71;">GitHub Repository:</strong></p>
+                            <p style="margin-bottom: -112px;">- <a href="https://github.com/yourusername/weather-app">Project Repository</a></p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+        <hr>
+        <section class="contact-section" id="contact">
+            <div class="container" style="    margin-top: -60px;">
+                <h2 class="contact-heading">Contact Me</h2>
+                <div style="display: flex;justify-content: space-between;">
+                    <div class="contact-content" style="margin-top: 70px; margin-left: 320px;">
+                        <p>If you're interested in collaborating or have any questions, feel free to reach out. I'd be
+                            happy to connect!</p>
+                        <div class="contact-form">
+                                <span >My Name:  Sachin Naik</span><br>
+                              <span>My Gmail: </span> <a href="mailto:sachinnaik964@gmail.com" style="text-decoration: none;">sachinnaik964@gmail.com</a><br>
+            <span>my number : </span>
+                                <span> 7019834252</span>
+                        </div>
+                    </div>
+                    <img src="contact me.gif" alt="" style="    margin-top: -68px;
+                    margin-right: 229px;">
+                </div>
+            </div>
+        </section>
+        <hr>
+    </main>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+        var typed = new Typed('#element', {
+            strings: ['Web Designer', 'Frontend Developer', 'Backend Developer'],
+            typeSpeed: 50,
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const navLinks = document.querySelectorAll("nav ul li a");
+
+            navLinks.forEach(link => {
+                link.addEventListener("click", function (event) {
+                    event.preventDefault();
+
+                    const targetSection = document.querySelector(link.getAttribute("href"));
+                    window.scrollTo({
+                        top: targetSection.offsetTop,
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            window.addEventListener("scroll", function () {
+                const sections = document.querySelectorAll("section");
+                const nav = document.querySelector("nav");
+
+                sections.forEach(section => {
+                    if (window.scrollY >= section.offsetTop - nav.clientHeight) {
+                        navLinks.forEach(link => {
+                            link.classList.remove("active");
+                        });
+                        const targetLink = document.querySelector(`nav ul li a[href="#${section.id}"]`);
+                        if (targetLink) {
+                            targetLink.classList.add("active");
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
